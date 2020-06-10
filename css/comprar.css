@@ -1,0 +1,117 @@
+.titulo-pagina{
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    line-height: 1.2;
+}
+
+main{
+    padding: 2.5rem 0;
+}
+
+.pasos{
+    border: 1px solid #e7e7e7;
+    margin: 2em 0px;
+}
+
+.cuerpo_pasos{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.paso{
+    display: table-cell;
+    position: relative;
+    padding: 1rem .75rem;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    border-right: 1px dashed #dfdfdf;
+    color: rgba(0,0,0,0.65);
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+}
+.paso i{
+    font-size: 1.3rem;
+    display: block;
+}
+
+.paso_indicador{
+    position: absolute;
+    top: .75rem;
+    left: .75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #e7e7e7;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: .875rem;
+    line-height: 1.375rem;
+    display: none;
+    padding: 0.3em;
+}
+
+.paso_completado .paso_indicador{
+    border-color: transparent;
+    background-color: rgba(51,203,129,0.12);
+    color: #33cb81;
+    line-height: 1.25rem;
+    display: block;
+}
+
+.paso_activo i{
+ color: #5c77fc;
+}
+.paso_activo{
+    color: rgba(0,0,0);
+}
+
+.visto{
+    font-size: 1em !important;
+}
+
+.icono_paso{
+    margin-bottom: 0.5em;
+}
+
+.perfil{
+    background-color: #f7f7f7 !important;
+    padding-left: 1.5rem !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.fondo_cafe{
+    background-color: #f7f7f7 !important;
+}
+.contenedor_resumen{
+    padding: 0.7rem 0px;
+    border-bottom: 1px solid #e7e7e7 !important;
+}
+.seccion_divi{
+    font-weight: bolder;
+}
+
+.fondo_morado{
+    background-color: #5c77fc;
+}
+
+#mapa{
+    width: 100%;
+    height: 300px;
+    border-radius: 1em;
+}
+
+#contenedor_mapa{
+    border: 1px solid #e7e7e7 !important;
+    padding: 1em;
+    display: none;
+    transition:  4s ease-in-out 1s;
+}
+
+.borde{
+    border: 1px solid #e7e7e7 !important;
+}
+.centrar{
+    text-align: center;
+}

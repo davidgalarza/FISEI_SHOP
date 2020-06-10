@@ -1,0 +1,14 @@
+main{
+    padding: 2.5rem 0;
+}
+
+#tabla_productos img{
+    width: 30px;
+}
+
+.fondo_cafe{
+    background-color: #f7f7f7 !important;
+}
+.fondo_morado{
+    background-color: #5c77fc;
+}
