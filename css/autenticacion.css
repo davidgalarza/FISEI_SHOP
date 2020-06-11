@@ -1,0 +1,14 @@
+.form_conatiner{
+    border: 0px solid;
+    padding: 80px 100px;
+    margin-top: 9vh;
+    -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    
+}
+form{
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+}
