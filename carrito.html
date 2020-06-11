@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,800;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3d6b73443c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/comun.css">
+    <link rel="stylesheet" href="./css/carrito.css">
+    <title>FISEI SHOP</title>
+</head>
+
+<body>
+
+    <div id="info_top" class="fondo_negro">
+        <div class="container">
+            <span><i class="fas fa-phone"></i> 00 33 169 7720</span>
+            <span><i class="far fa-envelope-open"></i> info@example.com</span>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="logo" src="https://demo.createx.studio/mstore/img/logo-dark.png" alt="" srcset="">
+                </div>
+                <div class="col-md-8">
+                    <ul id="menu_principal" class="nav">
+                        <li class="nav-item ">
+                          <a class="nav-link " href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Sobre nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Documentacion</a>
+                        </li>
+                        <li class="nav-item seleccionado">
+                            <i class="fas fa-shopping-cart carrito nav-link"></i>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <div id="contenedor">
+      <div>
+        <h2>Tu Orden</h2>
+      </div>
+      <div id="contenedorProductos">
+        <div id="barraProduct" >
+          <div id="tit">
+            <strong>Productos </strong> 
+          </div>
+           
+           <div id="linkShop">
+            <a href="#">Continuar Comprando</a>
+           </div>
+           
+        </div>
+         <!--Carta del Producto----->
+         <div class="card mb-3" style="max-width: 100%;">
+          <div class="row no-gutters">
+            <div class="col-md-2">
+              <img src="https://demo.createx.studio/mstore/img/shop/comparison/01.jpg" class="card-imagen" >
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h6 class="card-title">Calvin Klein Jeans Keds</h6>
+                <p class="card-text"><span class="etiqueta">Talla:</span> <span class="descripcion"> 8,5</span> </p>
+                <p class="card-text"><span class="etiqueta">Color:</span> <span class="descripcion"> Negro</span></p>
+                <p class="card-text"> <span class="estiloPrecio"> $50.00 </span> </p>
+              </div>
+            </div>
+            <div  class="col-md-3">
+              <p>Cantidad</p>
+              <input class="form-control" type="number">
+              <button type="button" class="btn btn-outline-dark"> <i class="fas fa-sync-alt"></i> Actualizar</button>
+              <button type="button" class="btn btn-outline-danger"> <i class="far fa-trash-alt"> </i> Eliminar</button>
+            </div>
+          </div>
+        </div>
+        <!------------------------------------------->
+  
+      </div>
+
+      <div id="contenedorCompra">
+        <div id="barraProduct2">
+          <p><strong>Subtotal</strong></p>
+        </div>
+        <div class="card2">
+          <p id="precio">$300.00</p>
+        </div>            
+       <button type="button" id="nota" class="btn btn-success">Nota</button>
+
+        <textarea class="form-control" id="text-nota"></textarea>
+        <button type="button" id="checkout" class="btn btn-success "><i class="far fa-credit-card"></i> Checkout</button>
+       
+      </div>
+    </div>
+    
+
+    
+    
+  </body>
+
+</html>
