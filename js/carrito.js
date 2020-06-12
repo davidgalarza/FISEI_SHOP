@@ -27,7 +27,7 @@ autenticacion.onAuthStateChanged(function(user) {
 
 
     base.collection('carritos').doc(user.uid).get().then((inf) =>{
-        
+        inf.productos
     })
 
     base.collection('carritos').doc(user.uid).update({
