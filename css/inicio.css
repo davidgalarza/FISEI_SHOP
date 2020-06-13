@@ -11,6 +11,11 @@
     box-shadow: rgba(150, 150, 150, 0.5) 5px 5px 5px 5px;
 }
 
+.product-thumb-link {
+    min-height: 458px;
+    max-height: 458px;
+}
+
 .product-thumb-link img {
     width: 100%;
     min-height: 300px;
