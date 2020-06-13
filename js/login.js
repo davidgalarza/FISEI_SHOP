@@ -33,7 +33,7 @@ async function autentificar(event) {
 
         let usu = await obtenerUsuario(resultado.user.uid)
 
-        window.location.href = usu.perfil == "ADMINISTRADOR" ? "inventario.html" : "inicio.html";
+        window.location.href = usu.perfil == "ADMINISTRADOR" ? "inventario.html" : "index.html";
         console.log(autenticacion.currentUser);
 
 
@@ -85,7 +85,7 @@ var recargarr = function(){
             perfil: perfil,
             telefono: telefono
         });
-        window.location.href = "inicio.html";
+        window.location.href = "index.html";
       }).catch(function(error) {
        console.log(error);
       });
