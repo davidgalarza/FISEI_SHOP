@@ -29,7 +29,7 @@ function idUsuarioActual(){
 var totalC;
 async function actualizar(idProducto){
     totalC=0;
-    let cant = document.getElementById(idProducto).value;
+    let cant = parseInt(document.getElementById(idProducto).value);
     carrito.productos.forEach(function(e){
         if(e.id==idProducto){
             e.cantidad=cant;
