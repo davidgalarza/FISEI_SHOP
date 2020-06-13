@@ -6,6 +6,7 @@ async function obtenerUsuario(uid) {
 function idUsuarioActual() {
     return new Promise(async (resolve, reject) => {
         autenticacion.onAuthStateChanged(function (user) {
+            if(user == null) resolve(null);
             resolve(user.uid);
         });
     });
@@ -27,3 +28,8 @@ function idUsuarioActual() {
     }
 
 })();
+
+async function salir(){
+    await autenticacion.signOut();
+    window.location.replace("./loggin.html");
+}
