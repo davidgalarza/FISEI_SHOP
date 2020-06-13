@@ -121,6 +121,14 @@
     background-color: #5c77fc;
     border-color: #5c77fc;
     
+    
+}
+#sinPro{
+    margin: 10px 0px;
+}
+#refe{
+    color: white;
+    text-decoration: none;
 }
 #nota{
     width: 30px;

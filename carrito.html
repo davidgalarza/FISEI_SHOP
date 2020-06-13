@@ -72,28 +72,10 @@
            </div>
            
         </div>
-         <!--Carta del Producto----->
-         <div class="card mb-3" style="max-width: 100%;">
-          <div class="row no-gutters">
-            <div class="col-md-2">
-              <img src="https://demo.createx.studio/mstore/img/shop/comparison/01.jpg" class="card-imagen" >
-            </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <h6 class="card-title">Calvin Klein Jeans Keds</h6>
-                <p class="card-text"><span class="etiqueta">Talla:</span> <span class="descripcion"> 8,5</span> </p>
-                <p class="card-text"><span class="etiqueta">Color:</span> <span class="descripcion"> Negro</span></p>
-                <p class="card-text"> <span class="estiloPrecio"> $50.00 </span> </p>
-              </div>
-            </div>
-            <div  class="col-md-3">
-              <p>Cantidad</p>
-              <input class="form-control" type="number">
-              <button type="button" class="btn btn-outline-dark"> <i class="fas fa-sync-alt"></i> Actualizar</button>
-              <button type="button" class="btn btn-outline-danger"> <i class="far fa-trash-alt"> </i> Eliminar</button>
-            </div>
-          </div>
-        </div>
+         <!--Carta del Producto----------------------------------->
+         <div id="coleccion">
+
+         </div>
         <!------------------------------------------->
   
       </div>
@@ -103,12 +85,12 @@
           <p><strong>Subtotal</strong></p>
         </div>
         <div class="card2">
-          <p id="precio">$300.00</p>
+          <div id="coleccionSubtotal">
+            <p id="precio"></p>
+          </div>
+          
         </div>            
-       <button type="button" id="nota" class="btn btn-success">Nota</button>
-
-        <textarea class="form-control" id="text-nota"></textarea>
-        <button type="button" id="checkout" class="btn btn-success "><i class="far fa-credit-card"></i> Checkout</button>
+        <button type="button" id="checkout" class="btn btn-success "><i class="far fa-credit-card"></i> <a id ="refe" href="./comprar.html">Checkout </a></button>
        
       </div>
     </div>
