@@ -62,3 +62,8 @@
     padding-left: 30%;
     height: 500px;
 }
+
+.carousel-item img {
+    min-height: 500px;
+    max-height: 500px;
+}
