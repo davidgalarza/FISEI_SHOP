@@ -35,43 +35,60 @@
         
     </header>
     <div>
-        <form  class="form_conatiner" >
+        <form  id="form-registro" class="form_conatiner" >
             <h1>REGISTRARTE</h1>
+            <p>Registrate con Facebook.</p>
+            <center>
+                <input type="image" src="imagenes/registrarse/fb.png" height="55" width="55" onclick="facebook()" ></input>
+            </center>
             <div class="form-group">
                 <label for="exampleInputEmail1">Nombre</label>
-                <input type="text" class="form-control" id="nombreRegistro" placeholder="Su nombre">
+                <input type="text" class="form-control" id="nombre" placeholder="Su nombre">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Apellido</label>
-                <input type="text" class="form-control" id="apellidoRegistro1" placeholder="Su apellido">
+                <input type="text" class="form-control" id="apellido" placeholder="Su apellido">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Direccion de E-Mail</label>
-                <input type="email" class="form-control" id="mailRegistro" placeholder="Su E-mail">
+                <input type="email" class="form-control" id="email" placeholder="Su E-mail">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Telefono</label>
-                <input type="number" class="form-control" id="telefonoRegistro" placeholder="Su telefono">
+                <input type="number" class="form-control" id="telefono" placeholder="Su telefono">
             </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Perfil</label><br>
-                <select name="perfil" id="perfilRegistro" class="form-control">
-                    <option value="comprador">COMPRADOR</option>
-                    <option value="administrador">ADMINISTRADOR</option>
-                  </select>
-            </div>
+            
             <div class="form-group">
                 <label for="exampleInputPassword1">Contarseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                <input type="password" class="form-control" id="contrasena" minlength="6" placeholder="Contraseña">
             </div>
-            <button type="submit" class="btn btn-success float-left btn-dark">REGISTRARSE</button>
-            <button onclick="location.href='loggin.html'" type="button"  class="btn btn-secondary float-right  btn-dark" >CANCELAR</button>
+            <button type="submit" class="btn btn-success float-left btn-dark">REGISTRARSE</button> 
+            <button  onclick="location.href='loggin.html'"  type="button"  class="btn btn-secondary float-right  btn-dark" >CANCELAR</button><br>
+          
+          
         </form>
         
     </div>
-    <div>
-
+<!-- Modal -->
+<div class="modal fade" id="exitoRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ATENCIO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Usted se a registrado correctamente.
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="recargar()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
     </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

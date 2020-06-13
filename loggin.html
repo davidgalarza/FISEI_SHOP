@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/3d6b73443c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/autenticacion.css">
     <link rel="stylesheet" href="./css/comun.css">
+
     <title>FISEI SHOP</title>
 </head>
 
@@ -35,28 +36,115 @@
         
     </header>
     <div>
-        <form  class="form_conatiner" >
+        <div>
+            <p>Inicia sesion con Facebook.</p>
+            <center>
+                <input type="image"  src="imagenes/registrarse/fb.png" height="55" width="55" onclick="recargarr()"></input>
+            </center>
+        </div>
+        <form  id="formularioInicio" class="form_conatiner" >
             <h1>INICIO DE SESION</h1>
             <div class="form-group">
                 <label for="exampleInputEmail1">Direccion de E-Mail</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="email" class="form-control" id="email" placeholder="Email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Contarseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                <input type="password" class="form-control" id="password" placeholder="Contraseña">
             </div>
             <div class="checkbox">
                 <label>
                     <input type="checkbox"> Mantener sesion activa.
                 </label>
             </div>
-            <button type="submit" class="btn btn-success btn-block btn-dark">INGRESAR</button><br>
+            <button type="submit" class="btn btn-success btn-block btn-dark">INGRESAR</button>
+            <a href="#" onclick="recuperarContra()">¿Haz olvidado tu contraseña?</a>
+            <br>
             <button onclick="location.href='registrarse.html'" type="button" class="btn btn-secondary float-right  btn-dark" >REGISTRARSE</button>
         </form>
     </div>
-    <div>
-
+   
+    <!-- Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ERROR DE INICIO DE SESION</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Usuario o contraseña incorrectos.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
     </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="errorModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ERROR DE INICIO DE SESION</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Demasiados intentos de inicio de sesión fallidos. Por favor, inténtelo de nuevo más tarde.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="errorContrasena" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ERROR AL RECUPERAR SU CLAVE</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Ingrese un correo electronico valido.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exitoContrasena" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ATENCIO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Se ha enviado un correo a su cuenta, por favor siga los pasos indicados.
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="recargar()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -67,6 +155,7 @@
     <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
 
     <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
 
     <script defer src="./js/login.js"></script>
 
