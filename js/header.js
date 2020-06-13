@@ -1,7 +1,12 @@
 autenticacion.onAuthStateChanged(function(user) {
-    base.collection('carritos').doc(user.uid).onSnapshot(function(doc) {
-        let cantidadProductos = doc.data().productos.length;
-
+    let uid = user.uid;
+    base.collection('carritos').doc(uid).onSnapshot(function(doc) {
+        console.log('DOC', doc)
+        let cantidadProductos = 0;
+        doc.data().productos.forEach(p => {
+            cantidadProductos += p.cantidad;
+        });
+    
         $('#numero_carriro').text(cantidadProductos);
     });
-});
+})

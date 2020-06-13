@@ -78,7 +78,7 @@ autenticacion.onAuthStateChanged(function(user) {
 
 });
 
-function anadir(elememto) {
+async function anadir(elememto) {
 
 
     let productoSeleccionado = base.collection('productos').doc(elememto.id);
@@ -91,14 +91,12 @@ function anadir(elememto) {
     var precio;
     var subtotal;
     var total;
-    productoSeleccionado.get().then(function(doc) {
-        foto = doc.get('foto');
-        nombre = doc.get('nombre');
-        precio = doc.get('precio');
+    let doc = await (await productoSeleccionado.get()).data();
+
+    foto = doc['foto'];
+        nombre = doc['nombre'];
+        precio = doc['precio'];
         subtotal = cantidad * precio;
-
-    });
-
 
     base.collection('carritos').doc(idU).get().then((inf) => {
         console.log('Existe ', inf.data());
@@ -110,7 +108,14 @@ function anadir(elememto) {
                 total += dt.subtotal;
                 console.log('====================>', dt);
             });
-            console.log(total);
+            console.log({
+                "cantidad": cantidad,
+                "foto": foto,
+                "id": id,
+                "nombre": nombre,
+                "precio": precio,
+                "subtotal": subtotal
+            });
             base.collection('carritos').doc(idU).update({
                 productos: firebase.firestore.FieldValue.arrayUnion({
                     "cantidad": cantidad,
