@@ -198,14 +198,14 @@ async function crearOrden() {
     'total': 0
   });
   let promises = carrito.productos.map(p => restarStock(p.id, p['cantidad']));
-  
 
- await Promise.all(promises);
+
+  await Promise.all(promises);
 
 }
 
 
-async function restarStock(id, cantidad){
+async function restarStock(id, cantidad) {
 
   let infoActual = await (await base.collection('productos').doc(id).get()).data();
   infoActual['stock'] -= cantidad;
@@ -217,7 +217,7 @@ async function restarStock(id, cantidad){
 
 async function irAlPaso(i) {
   let datosPaso = obtenerDatos(i);
-  datosOrden = {...datosOrden, ...datosPaso};
+  datosOrden = { ...datosOrden, ...datosPaso };
   datosOrden['carrito'] = carrito;
   let errores = obtenerErrores(datosPaso);
 
@@ -263,13 +263,14 @@ function obtenerErrores(datos) {
 
 
 
-async function iniciarDatos(){
+async function iniciarDatos() {
   mostrarSeccion('direccion');
 
   uid = await idUsuarioActual();
 
   infoUsuario = await cargarInfoUsuario(uid);
-  ponerDatosUsuario(infoUsuario);
+  if (infoUsuario != undefined)
+    ponerDatosUsuario(infoUsuario);
   carrito = await cargarCarritoUsuario(uid);
   ponerDatosCarrito(carrito);
 }
