@@ -41,8 +41,8 @@ async function crearProducto() {
         estado: 1,
         foto: linkFoto,
         nombre: $('#nombre_producto').val(),
-        precio: $('#precio_producto').val(),
-        stock: $('#stock_producto').val()
+        precio: parseFloat($('#precio_producto').val()),
+        stock: parseInt($('#stock_producto').val())
     };
 
     let errores = obtenerErrores(infoProducto);
