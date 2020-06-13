@@ -14,15 +14,26 @@ firebase.initializeApp(firebaseConfig);
 formAutentificacion = document.getElementById("formularioInicio");
 formAutentificacion.addEventListener("submit", autentificar, false);
 
-function autentificar(event) {
+
+async function obtenerUsuario(uid){
+    let base = firebase.firestore();
+    let usu = (await base.collection('usuarios').doc(uid).get()).data();
+    return usu;
+}
+
+async function autentificar(event) {
 
     event.preventDefault();
     let usuario = event.target.email.value;
     let contrasena = event.target.password.value;
     let autenticacion = firebase.auth();
-    autenticacion.signInWithEmailAndPassword(usuario, contrasena).then((resultado) => {
+    autenticacion.signInWithEmailAndPassword(usuario, contrasena).then(async (resultado) => {
         console.log(resultado);
-        window.location.href = "inicio.html";
+
+
+        let usu = await obtenerUsuario(resultado.user.uid)
+
+        window.location.href = usu.perfil == "ADMINISTRADOR" ? "inventario.html" : "inicio.html";
         console.log(autenticacion.currentUser);
 
 
