@@ -189,18 +189,18 @@ function mostrarErrores(errores) {
 
 async function crearOrden() {
   datosOrden['usuario'] = infoUsuario;
-  datosOrden['usuiario']['uid'] = uid;
+  datosOrden['usuario']['uid'] = uid;
   datosOrden['estado'] = 'PENDIENTE';
 
   await base.collection('ordenes').add(datosOrden);
-  /*await base.collection('carritos').doc(uid).update({
+  await base.collection('carritos').doc(uid).update({
     'productos': [],
     'total': 0
-  });*/
-  //let promises = carrito.productos.map(p => restarStock(p.id, p['cantidad']));
+  });
+  let promises = carrito.productos.map(p => restarStock(p.id, p['cantidad']));
   
 
- // await Promise.all(promises);
+ await Promise.all(promises);
 
 }
 
