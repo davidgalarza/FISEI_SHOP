@@ -64,12 +64,12 @@ var recargar = function(){
     document.location.reload();
 }
 
-var recargarr = function(){
+var recargarr = async function(){
 
     var provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('public_profile');
     let base = firebase.firestore();
-    firebase.auth().signInWithPopup(provider).then(function(result) {   
+    firebase.auth().signInWithPopup(provider).then(async function(result) {   
         console.log(result);
         var token = result.credential.accessToken;
         var nombre = result.user.displayName;
@@ -78,7 +78,7 @@ var recargarr = function(){
         var perfil = "COMPRADOR";
         var telefono = "090000000";
         console.log(result);
-        base.collection('usuarios').doc(result.user.uid).set({
+        await base.collection('usuarios').doc(result.user.uid).set({
             apellido: cadena[1],
             correo: mail,
             nombre: cadena[0],
