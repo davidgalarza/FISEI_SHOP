@@ -267,7 +267,6 @@ async function iniciarDatos(){
   mostrarSeccion('direccion');
 
   uid = await idUsuarioActual();
-  uid = 'user_id';
 
   infoUsuario = await cargarInfoUsuario(uid);
   ponerDatosUsuario(infoUsuario);
