@@ -75,9 +75,12 @@ console.log(carrito);
 var request =  new XMLHttpRequest();
 var html="";
 var html2="";
-var cantP=carrito.productos.length;
-console.log(cantP);
-console.log(carrito.productos)
+var cantP;
+if(carrito != undefined) cantP=carrito.productos.length;
+else cantP = 0;
+
+
+
 if(cantP>0){
     let contB=0;
     carrito.productos.forEach(producto =>{
@@ -117,7 +120,7 @@ if(cantP>0){
 
 
 
-html2 =`<p id="precio">$ ${carrito.total} </p> `
+html2 =`<p id="precio">$ ${carrito != undefined ?carrito.total : 0} </p> `
 document.getElementById('coleccion').innerHTML=html;
 document.getElementById('coleccionSubtotal').innerHTML=html2;
 
