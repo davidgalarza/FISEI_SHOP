@@ -115,3 +115,18 @@ main{
 .centrar{
     text-align: center;
 }
+
+
+
+/*FOOTER*/
+
+.barra_copy{
+    background-color: #1a1a1a;
+    padding-bottom: 1rem !important;
+    color: #fff !important;
+    text-align: center;
+}
+
+.barra_principal{
+    background-color: #1f1f1f;
+}

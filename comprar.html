@@ -56,7 +56,7 @@
 
 
     <main class="container">
-        <h1 >Comprar</h1>
+        <h1>Comprar</h1>
         <div class="pasos">
             <div class="cuerpo_pasos">
                 <div id="paso_carrito" class="paso paso_completado">
@@ -93,8 +93,12 @@
             </div>
         </div>
 
+
         <div class="row">
             <div class="col-md-9">
+                <div id="error_formulario">
+
+                </div>
                 <form id="formulario" action="">
                     <div class="seccion" id="direccion_seccion">
                         <div class="perfil media">
@@ -102,10 +106,11 @@
                                 src="https://demo.createx.studio/mstore/img/account/customer.jpg" width="95"
                                 alt="Daniel Adams">
                             <div class="media-body align-self-center">
-                                <h6 class="mb-1">David Galarza</h6>
-                                <div class="font-size-sm"><span class="text-warning">david@example.com</span></div>
+                                <h6 id="nombre_usuario" class="mb-1">David Galarza</h6>
+                                <div class="font-size-sm"><span id="correo_usuario"
+                                        class="text-warning">david@example.com</span></div>
                                 <div class="font-size-sm opacity-75"><span class="mr-1">Telefono:</span><span
-                                        class="font-weight-semibold">0982339928</span></div>
+                                        id="telefono_usuario" class="font-weight-semibold">0982339928</span></div>
                             </div>
                         </div>
                         <h6 class="seccion_divi mb-3 py-3 border-bottom">Direccion de entrega</h6>
@@ -134,6 +139,10 @@
                             </div>
                         </div>
 
+                        <div id="contenerdor_error">
+
+                        </div>
+
                         <div id="contenedor_mapa">
                             <p><i class="fas fa-info-circle"></i> Coloca el marcador sobre el lugar de entrega</p>
                             <div id="mapa">
@@ -144,13 +153,13 @@
                         <div class="mb-5"></div>
                         <div class="row">
                             <div class="col-6">
-                                <a href=#>
+                                <a href="./carrito.html">
                                     <button type="button" class="btn btn-block borde"><i class="fas fa-arrow-left"></i>
                                         Carrito</button>
                                 </a>
                             </div>
                             <div class="col-6">
-                                <button onclick="mostrarSeccion('pago')" type="button"
+                                <button onclick="irAlPaso(1)" type="button"
                                     class="btn btn-block btn-primary fondo_morado">Datos de Pago <i
                                         class="fas fa-arrow-right"></i></button>
                             </div>
@@ -203,7 +212,7 @@
 
                             </div>
                             <div class="col-6">
-                                <button onclick="mostrarSeccion('resumen')" type="button"
+                                <button onclick="irAlPaso(2)" type="button"
                                     class="btn btn-block btn-primary fondo_morado">Realizar Pago <i
                                         class="fas fa-money-bill-wave-alt"></i></button>
                             </div>
@@ -211,16 +220,16 @@
                     </div>
                     <div class="seccion" id="resumen_seccion">
                         <div class="borde centrar py-4">
-                            <i style="font-size: 3em;margin-bottom: 0.5em; color: #33cb81;" class="fas fa-check-circle"></i>
+                            <i style="font-size: 3em;margin-bottom: 0.5em; color: #33cb81;"
+                                class="fas fa-check-circle"></i>
                             <h4>Gracias por tu compra!</h4>
                             <p>Su pedido se ha realizado y se procesará lo antes posible.</p>
                             <p>Asegúrese de anotar su número de pedido, que es 34VB5540K83.</p>
                             <p>En breve recibirá un correo electrónico con la confirmación de su pedido. Tu puedes
                                 ahora:</p>
-                            <a href="./index.html">
-                                <button type="button"
-                                class="btn  btn-primary mx-3 fondo_morado">
-                                CONTINUAR COMPRANDO</button>
+                            <a href="./inicio.html">
+                                <button type="button" class="btn  btn-primary mx-3 fondo_morado">
+                                    CONTINUAR COMPRANDO</button>
                             </a>
                         </div>
                     </div>
@@ -231,7 +240,7 @@
                 <div class="contenedor_resumen">
                     <div class="d-flex justify-content-between mb-2">
                         <span>Sub total:</span>
-                        <span>$325.00</span>
+                        <span id="sub_total">$325.00</span>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span>Envio:</span>
@@ -243,10 +252,36 @@
                     </div>
                 </div>
 
-                <div class="h3 font-weight-semibold text-center py-3">$332.25</div>
+                <div id="total" class="h3 font-weight-semibold text-center py-3">$332.25</div>
             </div>
         </div>
     </main>
+
+    <footer>
+
+        <div class="barra_principal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+fsdf
+                    </div>
+                    <div class="col-md-6">
+                        fas
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="barra_copy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><span style="opacity: 0.6;">© Todos los derechos reservados. FISEI Shop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -260,7 +295,13 @@
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJRI-SYs_24XUcfHq89KQF3euVbst0GRs&libraries=places"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.4.0/card.min.js"></script>
-    <script src="./js/comprar.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <script defer src="./js/comprar.js"></script>
 
 
 </body>

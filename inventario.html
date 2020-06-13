@@ -57,6 +57,9 @@
         <h1>Inventario</h1>
         <div class="row py-4">
             <div class="col-md-9">
+                <div id="mensaje">
+
+                </div>
                 <table id="tabla_productos" class="table">
                     <thead>
                         <tr>
@@ -67,55 +70,15 @@
                             <th scope="col">Accion</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td><img src="https://demo.createx.studio/mstore/img/shop/comparison/01.jpg"
-                                    class="rounded float-left" alt="..."></td>
-                            <td>iPhone Pro Max 100</td>
-                            <td>100</td>
-                            <td>
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-danger"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td><img src="https://demo.createx.studio/mstore/img/shop/comparison/01.jpg"
-                                    class="rounded float-left" alt="..."></td>
-                            <td>iPhone Pro Max 100</td>
-                            <td>100</td>
-                            <td>
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-danger"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td><img src="https://demo.createx.studio/mstore/img/shop/comparison/01.jpg"
-                                    class="rounded float-left" alt="..."></td>
-                            <td>iPhone Pro Max 100</td>
-                            <td>100</td>
-                            <td>
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-danger"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
-                                </div>
-                            </td>
-                        </tr>
+                    <tbody id="cuerpo_tabla">
+
+                        
                     </tbody>
                 </table>
             </div>
             <div class="col-md-3">
                 <h2 class="h6 px-4 py-3 fondo_cafe text-center">Total de productos </h2>
-                <h1 style="font-size: 5em;text-align: center;">3</h1>
+                <h1 id="total_productos" style="font-size: 5em;text-align: center;">0</h1>
                 <button data-toggle="modal" data-target="#exampleModal" type="button"
                     class="btn btn-primary fondo_morado btn-block">
                     Añadir <i class="fas fa-plus"></i></button>
@@ -128,12 +91,17 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Crear Producto</h5>
+                    <h5  class="modal-title" id="exampleModalLabel">Crear Producto</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="error_formulario"></div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -167,32 +135,35 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Categoria</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <select id="categoria_producto" class="form-control" id="exampleFormControlSelect1">
+                                    <option value="telefonos" >Telefonos</option>
+                                    <option value="electrodomesticos">Electrodomesticos</option>
+                                    <option value="audifonos">Audifonos</option>
+                                    <option value="consolas">Consolas</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text">Imagen del producto</span>
+                                    <span class="input-group-text">Imagen del producto</span>
                                 </div>
                                 <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                  <label class="custom-file-label" for="inputGroupFile01">Seleccionar archivo...</label>
+                                    <input type="file" class="custom-file-input" id="foto_producto">
+                                    <label class="custom-file-label" for="foto_producto">Seleccionar
+                                        archivo...</label>
                                 </div>
-                              </div>
+                            </div>
+                        </div>
+                        <div class="center col-12">
+                            <div style="text-align: center;" class="center" id="estado_carga"></div>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Crear producto</button>
+                    <button onclick="crearProducto()" type="button" class="btn btn-primary">Crear producto</button>
                 </div>
             </div>
         </div>
@@ -207,6 +178,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+    <script defer src="./js/inventario.js"></script>
+
 
 </body>
 
