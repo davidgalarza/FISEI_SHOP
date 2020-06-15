@@ -10,6 +10,7 @@ var firebaseConfig = {
 };
 var formAutentificacion;
 firebase.initializeApp(firebaseConfig);
+let base = firebase.firestore();
 
 formAutentificacion = document.getElementById("form-registro");
 formAutentificacion.addEventListener("submit", registrar, false);
@@ -24,11 +25,11 @@ function registrar(event) {
     let contrasena = event.target.contrasena.value;
 
     let autenticacion = firebase.auth();
-    let base = firebase.firestore();
 
-    autenticacion.createUserWithEmailAndPassword(correo, contrasena).then((res) => {
+
+    autenticacion.createUserWithEmailAndPassword(correo, contrasena).then(async (res) => {
         
-        base.collection('usuarios').doc(res.user.uid).set({
+        await base.collection('usuarios').doc(res.user.uid).set({
             apellido: apellido,
             correo: correo,
             nombre: nombre,
@@ -36,6 +37,7 @@ function registrar(event) {
             telefono: telefono
         });
         $("#exitoRegistro").modal();
+        salir();
         
     }).catch((e) => {
 
@@ -43,14 +45,18 @@ function registrar(event) {
 
 
 }
+async function salir(){
+    let autenticacion = firebase.auth();
+    await autenticacion.signOut();
+}
 var recargar = function(){
     window.location.href = "loggin.html";   
 }
 function facebook(){
     var provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('public_profile');
-    let base = firebase.firestore();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+
+    firebase.auth().signInWithPopup(provider).then(async function(result) {
         var token = result.credential.accessToken;
         var nombre = result.user.displayName;
         var cadena = nombre.split(" ") 
@@ -59,7 +65,7 @@ function facebook(){
         var telefono = "090000000";
         console.log(result);
 
-        base.collection('usuarios').doc(result.user.uid).set({
+        await base.collection('usuarios').doc(result.user.uid).set({
             apellido: cadena[1],
             correo: mail,
             nombre: cadena[0],
@@ -67,6 +73,7 @@ function facebook(){
             telefono: telefono
         });
         $("#exitoRegistro").modal();
+        salir();
       }).catch(function(error) {
        console.log(error);
       });

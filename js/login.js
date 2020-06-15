@@ -13,10 +13,10 @@ firebase.initializeApp(firebaseConfig);
 
 formAutentificacion = document.getElementById("formularioInicio");
 formAutentificacion.addEventListener("submit", autentificar, false);
+let base = firebase.firestore();
 
 
 async function obtenerUsuario(uid){
-    let base = firebase.firestore();
     let usu = (await base.collection('usuarios').doc(uid).get()).data();
     return usu;
 }
@@ -31,13 +31,15 @@ async function autentificar(event) {
         console.log(resultado);
 
 
-        let usu = await obtenerUsuario(resultado.user.uid)
+       let usu = await obtenerUsuario(resultado.user.uid)
+       console.log(usu);
 
-        window.location.href = usu.perfil == "ADMINISTRADOR" ? "inventario.html" : "index.html";
+        window.location.href = (usu.perfil == "ADMINISTRADOR") ? "inventario.html" : "index.html";
         console.log(autenticacion.currentUser);
 
 
     }).catch((e) => {
+        console.log(e);
         if (e.message === "Too many unsuccessful login attempts. Please try again later.") {
             $("#errorModal2").modal();
         } else {
@@ -68,7 +70,6 @@ var recargarr = async function(){
 
     var provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('public_profile');
-    let base = firebase.firestore();
     firebase.auth().signInWithPopup(provider).then(async function(result) {   
         console.log(result);
         var token = result.credential.accessToken;

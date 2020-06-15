@@ -94,9 +94,9 @@ async function anadir(elememto) {
     let doc = await (await productoSeleccionado.get()).data();
 
     foto = doc['foto'];
-        nombre = doc['nombre'];
-        precio = doc['precio'];
-        subtotal = cantidad * precio;
+    nombre = doc['nombre'];
+    precio = doc['precio'];
+    subtotal = cantidad * precio;
 
     base.collection('carritos').doc(idU).get().then((inf) => {
         console.log('Existe ', inf.data());
@@ -108,6 +108,7 @@ async function anadir(elememto) {
                 total += dt.subtotal;
                 console.log('====================>', dt);
             });
+            total += subtotal;
             console.log({
                 "cantidad": cantidad,
                 "foto": foto,
