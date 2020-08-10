@@ -24,11 +24,11 @@ function registrar(event) {
     let telefono = event.target.telefono.value;
     let contrasena = event.target.contrasena.value;
 
-    let autenticacion = firebase.auth();
 
-
-    autenticacion.createUserWithEmailAndPassword(correo, contrasena).then(async (res) => {
-        
+    var credential = firebase.auth.EmailAuthProvider.credential(correo, contrasena);
+    var user = firebase.auth().currentUser;
+    user.linkWithCredential(credential).then(async (res) => {
+        console.log(res);
         await base.collection('usuarios').doc(res.user.uid).set({
             apellido: apellido,
             correo: correo,
@@ -36,9 +36,7 @@ function registrar(event) {
             perfil: perfil,
             telefono: telefono
         });
-        $("#exitoRegistro").modal();
-        salir();
-        
+        window.location.href = './comprar.html';
     }).catch((e) => {
 
     });

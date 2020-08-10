@@ -19,7 +19,7 @@ body {
 header{
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
-    padding: 1em 0px;
+    padding-top: 1em;
 }
 
 .logo{
@@ -29,18 +29,18 @@ header{
 }
 
 #menu_principal{
-    float: right;
+
     color: rgba(0,0,0,0.9) !important;
 }
 
 #menu_principal a{
     color: rgba(0,0,0,0.9) !important;
-
+    margin-right: 2em;
 }
 
 #menu_principal .seleccionado{
     border-bottom: solid 2px #5c77fc !important;
-
+    padding-bottom: 0.25em;
 }
 
 .carrito{
@@ -51,6 +51,30 @@ header{
     margin-top: 0.5em;
     margin-left: 0.5em;
     color: #5c77fc;
+}
+
+.boton_menu{
+    text-align: center;
+    display: inline-block;
+    margin:  0px 0.5em;
+}
+
+.boton_menu span{
+    font-size: 0.8em;
+}
+
+.no_link{
+    color: black; 
+    text-decoration: inherit; 
+}
+
+.no_link:hover{
+    color: #5c77fc; 
+    text-decoration: none; 
+}
+
+.linea{
+    border-bottom: 1.2px solid #e7e7e7;
 }
 
 

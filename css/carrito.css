@@ -71,10 +71,9 @@
     height: 25px;
     vertical-align: middle;
     width: 100%;
-    margin: 5px;
-    
+    margin: 5px; 
 }
-.form-control{
+.ingreso{
     border-radius: 0;
     height: 25px;
     margin: 5px;

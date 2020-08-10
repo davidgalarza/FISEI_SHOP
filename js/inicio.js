@@ -21,6 +21,7 @@ var idU = "";
 
 autenticacion.onAuthStateChanged(function(user) {
     console.log(user);
+    if(!user) return;
     idU = user['uid'].toString();
 
     base.collection("productos").where('estado', '==', 1).get()

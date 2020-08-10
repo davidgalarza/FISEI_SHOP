@@ -98,7 +98,7 @@ if(cantP>0){
           </div>
           <div  class="col-md-3">
             <p>Cantidad</p>
-            <input class="form-control" id="${producto.id}" type="number" min=1 value="${producto.cantidad}">
+            <input class="form-control ingreso" id="${producto.id}" type="number" min=1 value="${producto.cantidad}">
             <button type="button" id="botonAc${contB}" onclick="actualizar('${producto.id}')" class="btn btn-outline-dark"> <i class="fas fa-sync-alt"></i> Actualizar</button>
             <button type="button" id="botonElim${contB}" onclick="eliminar('${producto.id}')" class="btn btn-outline-danger"> <i class="far fa-trash-alt"> </i> Eliminar</button>
           </div>
