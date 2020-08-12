@@ -1,0 +1,152 @@
+.ais-SearchBox { margin: 1em 0; }
+
+  
+  .ais-ClearRefinements {
+    margin: 1em 0;
+  }
+  
+  .ais-SearchBox {
+    margin: 1em 0;
+  }
+  
+  .ais-Pagination {
+    margin-top: 1em;
+  }
+  
+  .ais-InstantSearch {
+    max-width: 960px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .ais-Hits-item {
+    margin-bottom: 1em;
+    width: calc(33% - 1rem);
+    display: grid;
+    align-items: end;
+  }
+  
+  .ais-Hits-item img {
+    margin-right: 1em;
+  }
+  
+  .hit-name {
+    margin-bottom: 0.5em;
+  }
+  
+  .hit-description {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 0.5em;
+  }
+  
+  #wrapper {
+    overflow-x: hidden;
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+
+#menu-toggle{
+    display: inline-block;
+    height: calc(1.5em + 1rem + 2px);
+    padding: .5rem 2rem .5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #404040;
+    vertical-align: middle;
+
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+@media(max-width: 700px){
+      .ais-Hits-item {
+        margin-bottom: 1em;
+        width: calc(45% - 1rem);
+      }
+}
+
+.hit-price{
+    color: #5c77fc !important;
+}
+
+
+
+.centrar_peque{
+    text-align: start;
+}
+@media(max-width: 500px){
+    .centrar_peque{
+        text-align: center;
+    } 
+}
+
+
+@media(max-width: 500px){
+    #contenedor_p{
+        margin-left: 0;
+        padding-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+      }
+      .ais-Hits-item {
+        margin-bottom: 1em;
+        width: calc(100% - 1rem);
+      }
+}
+
+.square {
+    width: 100%;
+    background-size: cover;
+  }
+  
+  .square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
