@@ -109,7 +109,7 @@ if(cantP>0){
     });
 }else{
     html =`<div id="sinPro">
-            <div class="alert alert-primary" role="alert">
+            <div class="alert alert-primary mt-4" role="alert">
                 No tiene productos registrados!
             </div>
         </div>`;

@@ -16,14 +16,14 @@ function idUsuarioActual() {
 
     let uid = await idUsuarioActual();
     if (uid == null) {
-        window.location.replace("./loggin.html");
+        window.location.replace("./index.html");
         return;
     }
     let usuario = await obtenerUsuario(uid);
 
     if (usuario.perfil != 'ADMINISTRADOR') {
         await autenticacion.signOut();
-        window.location.replace("./loggin.html");
+        window.location.replace("./index.html");
         return;
     }
 
@@ -31,5 +31,5 @@ function idUsuarioActual() {
 
 async function salir(){
     await autenticacion.signOut();
-    window.location.replace("./loggin.html");
+    window.location.replace("./index.html");
 }
