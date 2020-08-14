@@ -82,3 +82,9 @@ p {
         height: 20%;
     }
 }
+
+
+.breadcrumb a{
+    color: inherit;
+  text-decoration: none;
+}
