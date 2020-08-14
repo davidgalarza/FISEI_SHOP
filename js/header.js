@@ -91,10 +91,12 @@ async function salir() {
     let categoria = doc.data();
 
     $('#contenedor_cat').append(`<div class="col-4">
+    <a href="./explorar.html?categoria=${categoria.nombre}" >
     <div style="background:  url(${categoria.imagen}) rgba(25, 21, 23, 0.3);background-blend-mode: multiply;"
         class="bg-position-center bg-no-repeat bg-size-cover text-center px-3 py-4 mb-3">
         <h3 class="h5 text-white text-shadow my-3">${categoria.nombre}</h3>
     </div>
+    </a>
     </div>`);
 
    })
