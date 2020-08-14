@@ -51,7 +51,7 @@ autenticacion.onAuthStateChanged(function(user) {
             });
         });
 
-    base.collection('productos').where('estado', '==', 1).get().then(function(quuerySnapshot) {
+    base.collection('productos').where('estado', '==', 1).limit(8).get().then(function(quuerySnapshot) {
         quuerySnapshot.forEach(function(doc) {
 
 
