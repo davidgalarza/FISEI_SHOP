@@ -23,14 +23,17 @@ let search = instantsearch({
     indexName: 'productos',
     searchClient,
     numberLocale: 'es',
+    facets: ['categoria', 'precio'],
     searchFunction(helper) {
 
         if (!helper.state.query && !fsearch) {
 
             helper.setQuery(getQueryStringValue("q"))
+                .addDisjunctiveFacetRefinement('categoria', getQueryStringValue('categoria'))
+                .addNumericRefinement('estado', '=', 1)
                 .search();
             fsearch = true;
-        } else helper.search();
+        } else helper.addNumericRefinement('estado', '=', 1).search();
 
 
 
