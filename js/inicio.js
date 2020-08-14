@@ -21,7 +21,7 @@ var idU = "";
 
 autenticacion.onAuthStateChanged(function(user) {
     console.log(user);
-    if(!user) return;
+    if (!user) return;
     idU = user['uid'].toString();
 
     base.collection("productos").where('estado', '==', 1).get()
@@ -51,24 +51,27 @@ autenticacion.onAuthStateChanged(function(user) {
             });
         });
 
-    base.collection('productos').where('estado', '==', 1).get().then(function(quuerySnapshot) {
+    base.collection('productos').where('estado', '==', 1).limit(8).get().then(function(quuerySnapshot) {
         quuerySnapshot.forEach(function(doc) {
-            //console.log(doc.id, "=>", doc.data(), '=====> ', doc.get('foto'));
-            contenedor.innerHTML += "<div class=\"col-lg-3 col-sm-4 col-6 border border-collapse\">" +
-                "<div class=\"product-card\">" +
+
+
+            contenedor.innerHTML +=
+                "<div class=\"card\" style=\"width: 18rem;\">" +
                 "<div class=\"product-thumb-link\">" +
-                "<a href=\"#\" class=\"product-link\">" +
-                "<img src=\"" + doc.get('foto') + "\" alt=\"\">" +
-                "<p class=\"nombre-producto\">" + doc.get('nombre') + "</p>" +
-                "<p class=\"descripcion-producto\">" + ((doc.get('descripcion').toString().length > 50) ? doc.get('descripcion').toString().substring(0, 50) + '...' : doc.get('descripcion').toString()) + "</p>" +
-                "</a>" +
-                "<hr>" +
-                "<div class=\"ordenar-bloque\">" +
+                "<img src=\"" + doc.get('foto') + "\" class=\"card-img-top\" alt=\"\">" +
+                "<div class=\"card-body\">" +
+                "  <h5 class=\"card-title\">" + doc.get('nombre') + "</h5>" +
+                "  <p class=\"card-text\">" + ((doc.get('descripcion').toString().length > 50) ? doc.get('descripcion').toString().substring(0, 50) + '...' : doc.get('descripcion').toString()) + "</p>" +
+                "</div>" +
+                "</div>" +
+                "<div class=\"card-footer\">" +
+                "<div class=\"d-flex justify-content-around\">" +
                 "<p class=\"precio-producto  text-success\">$" + doc.get('precio') + "</p>" +
-                "<button type=\"button\" class=\"btn btn-primary btn-anadir\" id=\"" + doc.id + "\" onclick=\"anadir(this)\">Añadir a carrito</button>" + //Defino la id del producto que voy comprar al boton
+                " <input type=\"number\" class=\"form-control cant-anadir\" id=\"cant_" + doc.id + "\" placeholder=\"1\" value=\"1\" min=\"1\" max=\"" + doc.get('stock') + "\">" +
+                "<button type=\"button\" class=\"btn btn-primary btn-sm btn-anadir\" id=\"" + doc.id + "\" onclick=\"anadir(this)\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Añadir al carrito\">Agregar</button>" +
+                " </div>" +
                 "</div>" +
-                "</div>" +
-                "</div>" +
+
                 "</div>";
         });
     });
@@ -83,10 +86,12 @@ async function anadir(elememto) {
 
 
     let productoSeleccionado = base.collection('productos').doc(elememto.id);
+    var cantidadSel = document.getElementById('cant_' + elememto.id).value;
+    console.log("cantida de cant_" + elememto.id + " :" + cantidadSel);
     //console.log('Id del boton ', elememto.id, ' cli ', idU, 'prod', productoSeleccionado);
 
     var id = elememto.id;
-    var cantidad = 1;
+    var cantidad = cantidadSel;
     var foto;
     var nombre;
     var precio;
@@ -111,20 +116,20 @@ async function anadir(elememto) {
             });
             total += subtotal;
             console.log({
-                "cantidad": cantidad,
+                "cantidad": parseInt(cantidad),
                 "foto": foto,
                 "id": id,
                 "nombre": nombre,
-                "precio": precio,
+                "precio": parseFloat(precio),
                 "subtotal": subtotal
             });
             base.collection('carritos').doc(idU).update({
                 productos: firebase.firestore.FieldValue.arrayUnion({
-                    "cantidad": cantidad,
+                    "cantidad": parseInt(cantidad),
                     "foto": foto,
                     "id": id,
                     "nombre": nombre,
-                    "precio": precio,
+                    "precio": parseFloat(precio),
                     "subtotal": subtotal
                 }),
                 "total": total
@@ -132,11 +137,11 @@ async function anadir(elememto) {
         } else {
             base.collection('carritos').doc(idU).set({
                 "productos": [{
-                    "cantidad": cantidad,
+                    "cantidad": parseInt(cantidad),
                     "foto": foto,
                     "id": id,
                     "nombre": nombre,
-                    "precio": precio,
+                    "precio": parseFloat(precio),
                     "subtotal": subtotal
                 }],
                 "total": subtotal
@@ -146,3 +151,7 @@ async function anadir(elememto) {
 
 
 }
+
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+})

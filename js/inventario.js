@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig);
 let autenticacion = firebase.auth();
 let base = firebase.firestore();
 let almacenamiento = firebase.storage();
-
+var idProducto;
 let linkFoto = '';
 
 $('#foto_producto').change(async () => {
@@ -27,6 +27,22 @@ $('#foto_producto').change(async () => {
     await refFoto.put(foto);
     linkFoto = await refFoto.getDownloadURL();
     $('#estado_carga').html(`<div class="alert alert-success" role="alert">
+    Foto ${foto.name} subida
+  </div>`)
+
+});
+let linkFoto2 = '';
+
+$('#actualizarModal #foto_producto').change(async () => {
+    let foto = $('#actualizarModal #foto_producto').prop('files')[0];
+    console.log(foto);
+    $('#actualizarModal #estado_carga').html(`<div class="center spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>`)
+    let refFoto = almacenamiento.ref().child(`${Date.now()}.jpg`);
+    await refFoto.put(foto);
+    linkFoto2 = await refFoto.getDownloadURL();
+    $('#actualizarModal #estado_carga').html(`<div class="alert alert-success" role="alert">
     Foto ${foto.name} subida
   </div>`)
 
@@ -122,11 +138,14 @@ function crearFila(producto, i) {
     <td>
         <div class="btn-group" role="group" aria-label="Basic example">
             <button onclick="eliminar('${producto['id']}')" type="button" class="btn btn-danger"><i
-                    class="far fa-trash-alt"></i></button>
+            class="far fa-trash-alt"></i></button><a>&nbsp&nbsp</a>
+            <button onclick="abrirM('${producto['nombre']}', '${producto['precio']}', '${producto['descripcion']}', '${producto['stock']}', '${producto['categoria']}', '${producto['id']}')" type="button" class="btn btn-primary"><i
+            class="far fa-edit"></i></button>
             
         </div>
     </td>
-</tr>`
+</tr>
+`
 }
 
 async function eliminar(id) {
@@ -137,6 +156,51 @@ async function eliminar(id) {
     mostrarMensaje('Producto Eliminado!');
     listarProductos();
 }
+function abrirM(nombre, precio, descripcion, stock, categoria, id) {
+
+$('#actualizarModal').on('show.bs.modal', function(e) {
+    $(e.currentTarget).find('input[id="nombre_producto"]').val(nombre);
+    $(e.currentTarget).find('input[id="precio_producto"]').val(precio);
+    $(e.currentTarget).find('input[id="descripcion_producto"]').val(descripcion);
+    $(e.currentTarget).find('input[id="stock_producto"]').val(stock);
+    $(e.currentTarget).find('select[id="categoria_producto"]').val(categoria);
+    $('#actualizarModal #estado_carga').html('');
+     idProducto = id;
+     linkFoto2 = "";
+    
+});
+
+    $('#actualizarModal').modal('show');
+
+}
+async function actualizar() {
+    let infoProducto;
+if(linkFoto2 === ""){
+    infoProducto = {
+        categoria: $(' #actualizarModal #categoria_producto').val(),
+        descripcion: $('#actualizarModal #descripcion_producto').val(),
+        nombre: $('#actualizarModal #nombre_producto').val(),
+        precio: parseFloat($('#actualizarModal #precio_producto').val()),
+        stock: parseInt($('#actualizarModal #stock_producto').val())
+    };
+}else{
+    infoProducto = {
+        categoria: $(' #actualizarModal #categoria_producto').val(),
+        descripcion: $('#actualizarModal #descripcion_producto').val(),
+        foto: linkFoto2,
+        nombre: $('#actualizarModal #nombre_producto').val(),
+        precio: parseFloat($('#actualizarModal #precio_producto').val()),
+        stock: parseInt($('#actualizarModal #stock_producto').val())
+    };
+}
+
+await base.collection('productos').doc(idProducto).update(infoProducto);
+$('#actualizarModal').modal('hide');
+    mostrarMensaje('Producto Actualizado!');
+    listarProductos();
+
+}
+
 
 function obtenerErrores(datos) {
     console.log(datos);

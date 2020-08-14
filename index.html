@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,800;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,800;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d6b73443c.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./css/comun.css">
@@ -41,8 +39,7 @@
                 <li class="nav-item">
                     <a class="no_link" href="./carrito.html">
                         <div class="boton_menu">
-                            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-basket"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-basket" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z" />
                                 <path fill-rule="evenodd"
@@ -61,14 +58,13 @@
 
             </ul>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarText">
                 <strong class="d-md-none">Explorar</strong>
-                <form style="width: 100%;padding: 0em 1.5em;" class="form-inline my-2 my-lg-0">
+                <form action="./explorar.html" method="GET"style="width: 100%;padding: 0em 1.5em;" class="form-inline my-2 my-lg-0">
                     <div style="width: 100%;" class="input-group flex-nowrap">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="addon-wrapping">
@@ -81,17 +77,15 @@
                                 </svg>
                             </span>
                         </div>
-                        <input style="width: max;" type="text" class="form-control" placeholder="Buscar..."
-                            aria-label="Username" aria-describedby="addon-wrapping">
+                        <input name="q" style="width: max;" type="text" class="form-control" placeholder="Buscar..." aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </form>
 
-                <ul  class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item d-none  d-sm-none d-md-none d-lg-block">
                         <a class="no_link" href="./carrito.html">
                             <div style="width: max-content;" class="boton_menu">
-                                <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-basket"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-basket" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z" />
                                     <path fill-rule="evenodd"
@@ -115,13 +109,13 @@
 
                 </ul>
 
-                <ul  class="navbar-nav mr-auto ">
+                <ul class="navbar-nav mr-auto ">
                     <strong class="d-md-none">Paginas</strong>
                     <li style="margin-top: 1em;" class="  nav-item active d-md-none">
                         <a class="no_link" href="">Inicio</a>
                     </li>
                     <li style="margin-top: 1em;" class="  nav-item active d-md-none">
-                        <a class="no_link" href="">Productos</a>
+                        <a class="no_link" href="./explorar.html">Productos</a>
                     </li>
                     <strong style="margin-top: 1em;" class="d-md-none">Usuario</strong>
                     <li id="salir_1" style="margin-top: 1em;" class="  nav-item active d-md-none">
@@ -135,11 +129,10 @@
         </nav>
 
         <div style="padding: 0.5em 0em;" class="container-md d-none  d-sm-none d-md-none d-lg-block">
-            <ul  id="menu_principal" class="nav">
+            <ul id="menu_principal" class="nav">
                 <li>
                     <div class="dropdown">
-                        <a class=" nav-link dropdown-toggle" style="border-right: 1.2px solid #e7e7e7;"
-                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class=" nav-link dropdown-toggle" style="border-right: 1.2px solid #e7e7e7;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categorias
                         </a>
                         <div class="dropdown-menu pt-1" aria-labelledby="dropdownMenuButton">
@@ -155,7 +148,7 @@
                     <a class="nav-link seleccionado" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#productos">Productos</a>
+                    <a class="nav-link" href="./explorar.html">Productos</a>
                 </li>
             </ul>
         </div>
@@ -165,34 +158,45 @@
 
 
 
-    <section>
-        <div class="slider">
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" id="sliderP">
-
-
+    <section class="my-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-none d-sm-none d-md-block d-lg-block">
+                    <video style="border-radius: 1em; max-width: 100%;" height="500px" autoplay muted  loop src="./imagenes/organicos.mp4">
+                        <source src="./imagenes/organicos.mp4" type="video/mp4">
+                    </video>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="col-md-8">
+                    <div class="slider">
+                        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" id="sliderP">
+            
+            
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+            
+                    </div>
+                </div>
             </div>
-
         </div>
 
         <div id="productos">
-            <section class="container">
-                <h2 class="h3">Productos destacados</h2>
-                <div class="row no-gutters" id="productosInicio">
+            <section class="container my-4">
+                <h2 class="h3">Productos destacados</h2>  
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 mt-4" id="productosInicio">
 
 
                 </div>
@@ -201,15 +205,104 @@
 
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+    <footer class="page-footer bg-dark">
+        <!-- shop features-->
+        <div class="pt-5 pb-0 pb-md-5 border-bottom border-light" id="shop-features" style="background-color: #1f1f1f;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 border-right border-light">
+                        <div class="icon-box text-center mb-5 mb-md-0">
+                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck">
+                                    <rect x="1" y="3" width="15" height="13"></rect>
+                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                                </svg></div>
+                            <h3 class="icon-box-title font-weight-semibold text-white">Envio Gratuito</h3>
+                            <p class="icon-box-text">Recibe gratis tu pedido en cualquier lugar de la ciudad</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 border-right border-light">
+                        <div class="icon-box text-center mb-5 mb-md-0">
+                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <polyline points="1 20 1 14 7 14"></polyline>
+                                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15">
+                                    </path>
+                                </svg></div>
+                            <h3 class="icon-box-title font-weight-semibold text-white">Garantia de devolución</h3>
+                            <p class="icon-box-text">Si existen problemas con tus productos te devolvemos tu dinero</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 border-right border-light">
+                        <div class="icon-box text-center mb-5 mb-md-0">
+                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-life-buoy">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                    <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+                                    <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
+                                    <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line>
+                                    <line x1="14.83" y1="9.17" x2="18.36" y2="5.64"></line>
+                                    <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line>
+                                </svg></div>
+                            <h3 class="icon-box-title font-weight-semibold text-white">Soporte 24/7</h3>
+                            <p class="icon-box-text">Soporte permanente en tus compras las 24H</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-box text-center mb-5 mb-md-0">
+                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg></div>
+                            <h3 class="icon-box-title font-weight-semibold text-white">Pago en linea Seguro</h3>
+                            <p class="icon-box-text">Pasarela de pago segura con seguridad HTTPS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- third row-->
+        <div class="pt-5 pb-4" style="background-color: #1f1f1f;">
+            <div class="container">
+
+                <div class="row pt-4">
+                    <div class="col-sm-6 text-center text-sm-left">
+                        <ul class="list-inline font-size-sm">
+                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light"
+                                    href="./index.html">Inicio</a></li>
+                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light"
+                                    href="./explorar.html">Productos</a></li>
+                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light"
+                                    href="#">Privacidad</a></li>
+                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light" href="#">Terminos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 text-center text-sm-right">
+                        <div class="d-inline-block"><img width="187" src="./imagenes/cards.png" alt="Payment methods">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-3" style="background-color: #1a1a1a;">
+            <div class="container font-size-xs text-center" aria-label="Copyright"><span
+                    class="text-white opacity-60 mr-1">© Todos los derechos reservados. Hecho en FISEI</span><a
+                    class="nav-link-inline nav-link-light" href="http://uta.edu.ec" target="_blank">UTA</a></div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>

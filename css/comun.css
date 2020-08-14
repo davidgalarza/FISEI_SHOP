@@ -78,3 +78,41 @@ header{
 }
 
 
+footer .nav-link-inline {
+    color: rgba(255,255,255,0.65);
+}
+
+footer .border-light {
+    border-color: rgba(255,255,255,0.14) !important;
+}
+
+footer .icon-box-icon {
+    display: inline-block;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(92,119,252,0.1);
+    border-radius: 50%;
+    color: #5c77fc;
+    text-align: center;
+    line-height: 4.25rem;
+}
+
+footer .font-weight-semibold {
+    font-weight: 600 !important;
+}
+.icon-box-title {
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+.text-white {
+    color: #fff !important;
+}
+
+.icon-box-text {
+    margin-bottom: 0;
+    color: #888;
+    font-size: .875rem;
+}

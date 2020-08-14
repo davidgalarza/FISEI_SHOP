@@ -84,19 +84,19 @@ else cantP = 0;
 if(cantP>0){
     let contB=0;
     carrito.productos.forEach(producto =>{
-        html += `<div class="card mb-3" style="max-width: 100%;">
+        html += `<div class="card mb-3 conteCar"  style="max-width: 100%;">
         <div class="row no-gutters">
-          <div class="col-md-2">
+          <div class="col-xl-3 col-md-3 col-12 imgCarta">
             <img src="${producto.foto} " class="card-imagen" >
           </div>
-          <div class="col-md-7">
+          <div class="col-xl-7 col-md-4 ">
             <div class="card-body">
               <h6 class="card-title">${producto.nombre} </h6>
-              <p class="card-text"><span class="etiqueta">Precio:</span> <span class="descripcion"> ${producto.precio}</span> </p>
+              <p class="card-text"><span >Precio:</span> <span class="descripcion"> ${producto.precio}</span> </p>
               <p class="card-text"> <span class="estiloPrecio">$ ${producto.subtotal} </span> </p>
             </div>
           </div>
-          <div  class="col-md-3">
+          <div  class="col-xl-2 col-md-5">
             <p>Cantidad</p>
             <input class="form-control ingreso" id="${producto.id}" type="number" min=1 value="${producto.cantidad}">
             <button type="button" id="botonAc${contB}" onclick="actualizar('${producto.id}')" class="btn btn-outline-dark"> <i class="fas fa-sync-alt"></i> Actualizar</button>

@@ -26,9 +26,9 @@ function registrar(event) {
 
 
     var credential = firebase.auth.EmailAuthProvider.credential(correo, contrasena);
+
     var user = firebase.auth().currentUser;
     user.linkWithCredential(credential).then(async (res) => {
-        console.log(res);
         await base.collection('usuarios').doc(res.user.uid).set({
             apellido: apellido,
             correo: correo,
@@ -43,27 +43,27 @@ function registrar(event) {
 
 
 }
-async function salir(){
+async function salir() {
     let autenticacion = firebase.auth();
     await autenticacion.signOut();
 }
-var recargar = function(){
-    window.location.href = "loggin.html";   
+var recargar = function () {
+    window.location.href = "loggin.html";
 }
-function facebook(){
+function facebook() {
     var provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('public_profile');
 
-    firebase.auth().signInWithPopup(provider).then(async function(result) {
-        var token = result.credential.accessToken;
-        var nombre = result.user.displayName;
+    var usew = firebase.auth().currentUser;  
+    usew.linkWithPopup(provider).then(async (res) => {   
+        console.log(res.user.providerData[0]);
+        console.log(res.user);
+        var nombre = res.user.providerData[0].displayName;
         var cadena = nombre.split(" ") 
-        var mail = result.user.email;
         var perfil = "COMPRADOR";
+        var mail = res.user.providerData[0].email;
         var telefono = "090000000";
-        console.log(result);
-
-        await base.collection('usuarios').doc(result.user.uid).set({
+        await base.collection('usuarios').doc(res.user.uid).set({
             apellido: cadena[1],
             correo: mail,
             nombre: cadena[0],
@@ -71,10 +71,13 @@ function facebook(){
             telefono: telefono
         });
         $("#exitoRegistro").modal();
-        salir();
+        window.location.href = './comprar.html';
+
+
       }).catch(function(error) {
-       console.log(error);
+        console.log(error);
       });
+
 }
 
 

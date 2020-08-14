@@ -53,6 +53,7 @@ autenticacion.onAuthStateChanged(async function (user) {
             let total = 0;
             if (doc.data() != undefined) {
                 doc.data().productos.forEach(p => {
+                    console.log(p);
                     cantidadProductos += p.cantidad;
                     total += p.cantidad * p.precio;
                 });

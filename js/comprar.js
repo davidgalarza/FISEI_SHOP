@@ -28,9 +28,19 @@ var carrito;
 function idUsuarioActual() {
   return new Promise(async (resolve, reject) => {
     autenticacion.onAuthStateChanged(function (user) {
+
+      if(user.isAnonymous)mostarOverlay();
       resolve(user.uid);
     });
   });
+}
+
+function mostarOverlay(){
+  $( '.modal' ).addClass( 'open' );
+
+  if ( $( '.modal' ).hasClass( 'open' ) ) {
+    $( '.container' ).addClass( 'blur' );
+  } 
 }
 
 async function cargarInfoUsuario(uid) {
@@ -281,3 +291,4 @@ iniciarDatos();
 
 
 google.maps.event.addDomListener(window, 'load', iniciarMapa);
+
