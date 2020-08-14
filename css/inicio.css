@@ -6,6 +6,9 @@
     margin-left: auto;
     background-color: #fff;
 }
+.carousel-inner{
+    border-radius: 1em;
+}
 
 .card:hover {
     box-shadow: rgba(150, 150, 150, 0.5) 5px 5px 5px 5px;
@@ -63,9 +66,7 @@
 }
 
 .slider {
-    width: 80%;
     align-content: center;
-    padding-left: 30%;
     height: 500px;
 }
 

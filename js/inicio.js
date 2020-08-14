@@ -116,20 +116,20 @@ async function anadir(elememto) {
             });
             total += subtotal;
             console.log({
-                "cantidad": cantidad,
+                "cantidad": parseInt(cantidad),
                 "foto": foto,
                 "id": id,
                 "nombre": nombre,
-                "precio": precio,
+                "precio": parseFloat(precio),
                 "subtotal": subtotal
             });
             base.collection('carritos').doc(idU).update({
                 productos: firebase.firestore.FieldValue.arrayUnion({
-                    "cantidad": cantidad,
+                    "cantidad": parseInt(cantidad),
                     "foto": foto,
                     "id": id,
                     "nombre": nombre,
-                    "precio": precio,
+                    "precio": parseFloat(precio),
                     "subtotal": subtotal
                 }),
                 "total": total
@@ -137,11 +137,11 @@ async function anadir(elememto) {
         } else {
             base.collection('carritos').doc(idU).set({
                 "productos": [{
-                    "cantidad": cantidad,
+                    "cantidad": parseInt(cantidad),
                     "foto": foto,
                     "id": id,
                     "nombre": nombre,
-                    "precio": precio,
+                    "precio": parseFloat(precio),
                     "subtotal": subtotal
                 }],
                 "total": subtotal
