@@ -157,45 +157,46 @@ async function eliminar(id) {
     listarProductos();
 }
 function abrirM(nombre, precio, descripcion, stock, categoria, id) {
+    console.log('hola');
+    $('#actualizarModal').on('show.bs.modal', function (e) {
+        $(e.currentTarget).find('input[id="nombre_producto"]').val(nombre);
+        $(e.currentTarget).find('input[id="precio_producto"]').val(precio);
+        $(e.currentTarget).find('input[id="descripcion_producto"]').val(descripcion);
+        $(e.currentTarget).find('input[id="stock_producto"]').val(stock);
+        $(e.currentTarget).find('select[id="categoria_producto"]').val(categoria);
+        $('#actualizarModal #estado_carga').html('');
+        idProducto = id;
+        linkFoto2 = "";
 
-$('#actualizarModal').on('show.bs.modal', function(e) {
-    $(e.currentTarget).find('input[id="nombre_producto"]').val(nombre);
-    $(e.currentTarget).find('input[id="precio_producto"]').val(precio);
-    $(e.currentTarget).find('input[id="descripcion_producto"]').val(descripcion);
-    $(e.currentTarget).find('input[id="stock_producto"]').val(stock);
-    $(e.currentTarget).find('select[id="categoria_producto"]').val(categoria);
-    $('#actualizarModal #estado_carga').html('');
-     idProducto = id;
-     linkFoto2 = "";
-    
-});
+    });
 
     $('#actualizarModal').modal('show');
 
 }
 async function actualizar() {
+    console.log('das');
     let infoProducto;
-if(linkFoto2 === ""){
-    infoProducto = {
-        categoria: $(' #actualizarModal #categoria_producto').val(),
-        descripcion: $('#actualizarModal #descripcion_producto').val(),
-        nombre: $('#actualizarModal #nombre_producto').val(),
-        precio: parseFloat($('#actualizarModal #precio_producto').val()),
-        stock: parseInt($('#actualizarModal #stock_producto').val())
-    };
-}else{
-    infoProducto = {
-        categoria: $(' #actualizarModal #categoria_producto').val(),
-        descripcion: $('#actualizarModal #descripcion_producto').val(),
-        foto: linkFoto2,
-        nombre: $('#actualizarModal #nombre_producto').val(),
-        precio: parseFloat($('#actualizarModal #precio_producto').val()),
-        stock: parseInt($('#actualizarModal #stock_producto').val())
-    };
-}
+    if (linkFoto2 === "") {
+        infoProducto = {
+            categoria: $(' #actualizarModal #categoria_producto').val(),
+            descripcion: $('#actualizarModal #descripcion_producto').val(),
+            nombre: $('#actualizarModal #nombre_producto').val(),
+            precio: parseFloat($('#actualizarModal #precio_producto').val()),
+            stock: parseInt($('#actualizarModal #stock_producto').val())
+        };
+    } else {
+        infoProducto = {
+            categoria: $(' #actualizarModal #categoria_producto').val(),
+            descripcion: $('#actualizarModal #descripcion_producto').val(),
+            foto: linkFoto2,
+            nombre: $('#actualizarModal #nombre_producto').val(),
+            precio: parseFloat($('#actualizarModal #precio_producto').val()),
+            stock: parseInt($('#actualizarModal #stock_producto').val())
+        };
+    }
 
-await base.collection('productos').doc(idProducto).update(infoProducto);
-$('#actualizarModal').modal('hide');
+    await base.collection('productos').doc(idProducto).update(infoProducto);
+    $('#actualizarModal').modal('hide');
     mostrarMensaje('Producto Actualizado!');
     listarProductos();
 
