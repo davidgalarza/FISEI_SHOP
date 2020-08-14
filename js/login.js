@@ -71,22 +71,9 @@ var recargarr = async function(){
     var provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('public_profile');
     firebase.auth().signInWithPopup(provider).then(async function(result) {   
-        console.log(result);
-        var token = result.credential.accessToken;
-        var nombre = result.user.displayName;
-        var cadena = nombre.split(" ") 
-        var mail = result.user.email;
-        var perfil = "COMPRADOR";
-        var telefono = "090000000";
-        console.log(result);
-        await base.collection('usuarios').doc(result.user.uid).set({
-            apellido: cadena[1],
-            correo: mail,
-            nombre: cadena[0],
-            perfil: perfil,
-            telefono: telefono
-        });
-        window.location.href = "index.html";
+      
+        window.location.href = './comprar.html';
+        
       }).catch(function(error) {
        console.log(error);
       });

@@ -27,172 +27,63 @@
     </div>
 
     <header>
-        <nav class="container-md navbar navbar-expand-lg navbar-light linea">
-            <a class="navbar-brand" href="./index.html">
-                <img class="logo" src="imagenes/logoFISEI.jpg" alt="" srcset="">
-            </a>
-
-            <ul style="float: right;
-            position: absolute;
-            top: 0.5em;
-            right: 6em;" class="navbar-nav mr-auto d-md-none">
-
-                <li class="nav-item">
-                    <a class="no_link" href="./carrito.html">
-                        <div class="boton_menu">
-                            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-basket"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z" />
-                                <path fill-rule="evenodd"
-                                    d="M1 7v1h14V7H1zM.5 6a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5H.5z" />
-                                <path fill-rule="evenodd"
-                                    d="M14 9H2v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9zM2 8a1 1 0 0 0-1 1v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1H2z" />
-                                <path fill-rule="evenodd"
-                                    d="M4 10a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5z" />
-                            </svg>
-                            <span id="numero_carriro" class="badge badge-primary"></span>
-                            <br>
-                            <span id="total_carrito2">$30.5</span>
-                        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="">
+                        <img class="logo" src="imagenes/logoFISEI.jpg" alt="" srcset="">
                     </a>
-                </li>
-
-            </ul>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarText">
-                <strong class="d-md-none">Explorar</strong>
-                <form style="width: 100%;padding: 0em 1.5em;" class="form-inline my-2 my-lg-0">
-                    <div style="width: 100%;" class="input-group flex-nowrap">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                                    <path fill-rule="evenodd"
-                                        d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                                </svg>
-                            </span>
-                        </div>
-                        <input style="width: max;" type="text" class="form-control" placeholder="Buscar..."
-                            aria-label="Username" aria-describedby="addon-wrapping">
-                    </div>
-                </form>
-
-                <ul  class="navbar-nav mr-auto">
-                    <li class="nav-item d-none  d-sm-none d-md-none d-lg-block">
-                        <a class="no_link" href="./carrito.html">
-                            <div style="width: max-content;" class="boton_menu">
-                                <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-basket"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z" />
-                                    <path fill-rule="evenodd"
-                                        d="M1 7v1h14V7H1zM.5 6a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5H.5z" />
-                                    <path fill-rule="evenodd"
-                                        d="M14 9H2v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9zM2 8a1 1 0 0 0-1 1v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1H2z" />
-                                    <path fill-rule="evenodd"
-                                        d="M4 10a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5z" />
-                                </svg>
-                                <span id="numero_carriro2" class="badge badge-primary"></span>
-                                <br>
-                                <span id="total_carrito">$30.5</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li id="boton_pricipal" class="nav-item active d-none  d-sm-none d-md-none d-lg-block ">
-
-                    </li>
-
-
-                </ul>
-
-                <ul  class="navbar-nav mr-auto ">
-                    <strong class="d-md-none">Paginas</strong>
-                    <li style="margin-top: 1em;" class="  nav-item active d-md-none">
-                        <a class="no_link" href="">Inicio</a>
-                    </li>
-                    <li style="margin-top: 1em;" class="  nav-item active d-md-none">
-                        <a class="no_link" href="">Productos</a>
-                    </li>
-                    <strong style="margin-top: 1em;" class="d-md-none">Usuario</strong>
-                    <li id="salir_1" style="margin-top: 1em;" class="  nav-item active d-md-none">
-                        <a class="no_link" onclick="salir()" href="">Cerrar sesion</a>
-                    </li>
-                    <li id="ingresar_1" style="margin-top: 1em;" class="  nav-item active d-md-none">
-                        <a class="no_link" href="./loggin.html">Ingresar</a>
-                    </li>
-                </ul>
+                </div>
             </div>
-        </nav>
-
-        <div style="padding: 0.5em 0em;" class="container-md d-none  d-sm-none d-md-none d-lg-block">
-            <ul  id="menu_principal" class="nav">
-                <li>
-                    <div class="dropdown">
-                        <a class=" nav-link dropdown-toggle" style="border-right: 1.2px solid #e7e7e7;"
-                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Categorias
-                        </a>
-                        <div class="dropdown-menu pt-1" aria-labelledby="dropdownMenuButton">
-                            <div style="width: 45vw;padding: 1em;">
-                                <div id="contenedor_cat" class="row">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link seleccionado" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#productos">Productos</a>
-                </li>
-            </ul>
         </div>
+
     </header>
-
     <div>
-        <form id="formularioInicio" class="form_conatiner">
-            <h1>INICIO DE SESION</h1>
-            <div class="divider"></div>
-            <p>Inicia sesion con Facebook.</p>
 
-            <center>
 
-                <button type="button" onclick="recargarr()" class="btn btn-primary"><i
-                        class="fab fa-facebook-square"></i> Continuar con Facebook</button>
 
-            </center>
-            <hr>
-            <p>Inicia sesion con correo.</p>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Direccion de E-Mail</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Contarseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Contraseña">
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> Mantener sesion activa.
-                </label>
-            </div>
-            <button type="submit" class="btn btn-success btn-block btn-dark">INGRESAR</button>
-            <a href="#" onclick="recuperarContra()">¿Haz olvidado tu contraseña?</a>
-            <br>
-            <button onclick="location.href='registrarse.html'" type="button"
-                class="btn btn-secondary float-right  btn-dark">REGISTRARSE</button>
-        </form>
+<section class="container-fluid">
+    <section class="row justify-content-center">
+        <section class="col-40 col-sm-6 col-md-20">
+            <form id="formularioInicio" class="form_conatiner">
+                <h1 class="text-center">INICIO DE SESION</h1>
+                <div class="divider"></div>
+                <p class="text-left">Inicia sesion con Facebook.</p>
+    
+                <center>
+    
+                    <button type="button" onclick="recargarr()" class="btn btn-primary"><i
+                            class="fab fa-facebook-square"></i> Continuar con Facebook</button>
+    
+                </center>
+                <hr>
+                <p class="text-left">Inicia sesion con correo.</p>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Direccion de E-Mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contarseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                </div>
+                <div class="form-group form-check">
+                    <label>
+                        <input type="checkbox"> Mantener sesion activa.
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-success btn-block btn-dark">INGRESAR</button>
+                <a href="#" onclick="recuperarContra()">¿Haz olvidado tu contraseña?</a>
+                <br>
+                <button onclick="location.href='registrarse.html'" type="button"
+                    class="btn btn-secondary float-right  btn-dark">REGISTRARSE</button>
+            </form>
+        </section>
+        
+    </section>
+
+</section>
+
+
     </div>
 
     <!-- Modal -->
@@ -201,7 +92,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">ERROR DE INICIO DE SESION</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">ERROR DE INICIO DE SESIONNNNN</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

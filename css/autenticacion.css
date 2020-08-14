@@ -7,8 +7,6 @@
     box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
     
 }
-form{
-    margin: 0 auto;
-    width: 50%;
-    height: 50%;
+#new-board-btn {
+    padding-right: 43vh;
 }
