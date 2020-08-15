@@ -29,7 +29,7 @@ function idUsuarioActual() {
   return new Promise(async (resolve, reject) => {
     autenticacion.onAuthStateChanged(function (user) {
 
-      if(user.isAnonymous)mostarOverlay();
+      if(user.isAnonymous) mostarOverlay(); // Es un usuario anomimo
       resolve(user.uid);
     });
   });
