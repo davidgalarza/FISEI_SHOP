@@ -22,16 +22,23 @@ let searchClient = algoliasearch('EFBGZNWKVR', 'cd8353e5cda13dacf18e347fb9ac68ea
 let search = instantsearch({
     indexName: 'productos',
     searchClient,
+    urlSync: true,
     numberLocale: 'es',
     facets: ['categoria', 'precio'],
     searchFunction(helper) {
 
         if (!helper.state.query && !fsearch) {
-
-            helper.setQuery(getQueryStringValue("q"))
+            if(getQueryStringValue('categoria')) {
+                helper.setQuery(getQueryStringValue("q"))
                 .addDisjunctiveFacetRefinement('categoria', getQueryStringValue('categoria'))
                 .addNumericRefinement('estado', '=', 1)
                 .search();
+            } else {
+                helper.setQuery(getQueryStringValue("q"))
+                .addNumericRefinement('estado', '=', 1)
+                .search();
+            }
+            
             fsearch = true;
         } else helper.addNumericRefinement('estado', '=', 1).search();
 
