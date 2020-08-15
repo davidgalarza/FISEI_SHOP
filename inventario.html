@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,800;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,800;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d6b73443c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/inventario.css">
     <link rel="stylesheet" href="./css/comun.css">
@@ -41,17 +39,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./ordenesAdmin.html">Ordenes</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="./reportes.html">Reportes</a>
+                        </li>
 
                         <li class="nav-item">
                             <div style="    margin: auto;">
-                                <i  onclick="salir()" class="carrito morsdo fas fa-sign-out-alt"></i>
+                                <i onclick="salir()" class="carrito morsdo fas fa-sign-out-alt"></i>
                             </div>
-                            
+
 
 
                         </li>
 
-                        
+
                     </ul>
                 </div>
             </div>
@@ -84,15 +85,13 @@
             <div class="col-md-3">
                 <h2 class="h6 px-4 py-3 fondo_cafe text-center">Total de productos </h2>
                 <h1 id="total_productos" style="font-size: 5em;text-align: center;">0</h1>
-                <button data-toggle="modal" data-target="#exampleModal" type="button"
-                    class="btn btn-primary fondo_morado btn-block">
+                <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-primary fondo_morado btn-block">
                     Añadir <i class="fas fa-plus"></i></button>
             </div>
         </div>
     </main>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -111,30 +110,26 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="nombre_producto">Nombre</label>
-                                <input type="text" class="form-control" id="nombre_producto"
-                                    aria-describedby="emailHelp" placeholder="Ejm: iPhone 7 plus">
+                                <input type="text" class="form-control" id="nombre_producto" aria-describedby="emailHelp" placeholder="Ejm: iPhone 7 plus">
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="precio_producto">Precio</label>
-                                <input type="number" class="form-control" id="precio_producto"
-                                    aria-describedby="emailHelp">
+                                <input type="number" class="form-control" id="precio_producto" aria-describedby="emailHelp">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="descripcion_producto">Descripcion</label>
-                                <input type="text" class="form-control" id="descripcion_producto"
-                                    aria-describedby="emailHelp">
+                                <input type="text" class="form-control" id="descripcion_producto" aria-describedby="emailHelp">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="stock_producto">Stock</label>
-                                <input type="number" class="form-control" id="stock_producto"
-                                    aria-describedby="emailHelp">
+                                <input type="number" class="form-control" id="stock_producto" aria-describedby="emailHelp">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -182,9 +177,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 border-right border-light">
                         <div class="icon-box text-center mb-5 mb-md-0">
-                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck">
+                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck">
                                     <rect x="1" y="3" width="15" height="13"></rect>
                                     <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
                                     <circle cx="5.5" cy="18.5" r="2.5"></circle>
@@ -196,9 +189,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6 border-right border-light">
                         <div class="icon-box text-center mb-5 mb-md-0">
-                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw">
+                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw">
                                     <polyline points="23 4 23 10 17 10"></polyline>
                                     <polyline points="1 20 1 14 7 14"></polyline>
                                     <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15">
@@ -210,9 +201,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6 border-right border-light">
                         <div class="icon-box text-center mb-5 mb-md-0">
-                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-life-buoy">
+                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-life-buoy">
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <circle cx="12" cy="12" r="4"></circle>
                                     <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
@@ -227,9 +216,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-box text-center mb-5 mb-md-0">
-                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card">
+                            <div class="icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card">
                                     <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                                     <line x1="1" y1="10" x2="23" y2="10"></line>
                                 </svg></div>
@@ -247,12 +234,9 @@
                 <div class="row pt-4">
                     <div class="col-sm-6 text-center text-sm-left">
                         <ul class="list-inline font-size-sm">
-                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light"
-                                    href="./index.html">Inicio</a></li>
-                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light"
-                                    href="./explorar.html">Productos</a></li>
-                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light"
-                                    href="#">Privacidad</a></li>
+                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light" href="./index.html">Inicio</a></li>
+                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light" href="./explorar.html">Productos</a></li>
+                            <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light" href="#">Privacidad</a></li>
                             <li class="list-inline-item mr-3"><a class="nav-link-inline nav-link-light" href="#">Terminos</a></li>
                         </ul>
                     </div>
@@ -264,14 +248,11 @@
             </div>
         </div>
         <div class="py-3" style="background-color: #1a1a1a;">
-            <div class="container font-size-xs text-center" aria-label="Copyright"><span
-                    class="text-white opacity-60 mr-1">© Todos los derechos reservados. Hecho en FISEI</span><a
-                    class="nav-link-inline nav-link-light" href="http://uta.edu.ec" target="_blank">UTA</a></div>
+            <div class="container font-size-xs text-center" aria-label="Copyright"><span class="text-white opacity-60 mr-1">© Todos los derechos reservados. Hecho en FISEI</span><a class="nav-link-inline nav-link-light" href="http://uta.edu.ec" target="_blank">UTA</a></div>
         </div>
     </footer>
 
-    <div class="modal fade" id="actualizarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="actualizarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -290,30 +271,26 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="nombre_producto">Nombre</label>
-                                <input type="text" class="form-control" id="nombre_producto"
-                                    aria-describedby="emailHelp">
+                                <input type="text" class="form-control" id="nombre_producto" aria-describedby="emailHelp">
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="precio_producto">Precio</label>
-                                <input type="number" class="form-control" id="precio_producto"
-                                    aria-describedby="emailHelp">
+                                <input type="number" class="form-control" id="precio_producto" aria-describedby="emailHelp">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="descripcion_producto">Descripcion</label>
-                                <input type="text" class="form-control" id="descripcion_producto"
-                                    aria-describedby="emailHelp">
+                                <input type="text" class="form-control" id="descripcion_producto" aria-describedby="emailHelp">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="stock_producto">Stock</label>
-                                <input type="number" class="form-control" id="stock_producto"
-                                    aria-describedby="emailHelp">
+                                <input type="number" class="form-control" id="stock_producto" aria-describedby="emailHelp">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -354,15 +331,9 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <script defer src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
 
