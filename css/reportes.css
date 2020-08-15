@@ -1,0 +1,18 @@
+.centro {
+    padding: 20px;
+}
+
+.centro>div {
+    padding: 20px;
+}
+
+#spanNumUsuarios {
+    margin-top: 20%;
+    align-self: center;
+    text-align: center;
+}
+
+.row {
+    text-align: center;
+    align-content: center;
+}
